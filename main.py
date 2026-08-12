@@ -7,6 +7,7 @@ from sklearn.feature_selection import VarianceThreshold
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score
+import joblib
 
 def print_image(image, ax=None):
     """
@@ -75,3 +76,4 @@ print("//////////////////////")
 print(modelDTC.score(X_test, y_test))
 print(modelRF.score(X_test, y_test))
 
+joblib.dump(modelRF, 'random_forest')
